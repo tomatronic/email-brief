@@ -1,0 +1,71 @@
+{# Cart horizontal fashion layout #}
+{% set max_products_to_show = 1 %}
+{% set ga_campaign_code='fr-cart-1' %}
+{% if trigger.contact_type == 'b' %} {# Cart abandon #}
+{% elif trigger.contact_type == 'ba' %} {# Browse abandon #}
+    {% set ga_campaign_code='fr-browse-1' %}
+{% endif %}
+{% set passengers = 0 %}
+<!-- {{ cart }} -->
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="w100p" width="520" style="max-width: 520px;">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" align="center" class="w100p" width="100%" bgcolor="#0099cc">
+        <tr>
+          <td style="padding: 20px; width: 20px;" width="20"><img src="https://www.uploadlibrary.com/BlueBay/cart_images/sun.png" width="20" style="width: 20px;display: block;" /></td>
+          <td style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 18px;">Holiday Details</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  {% set counter = 1 %}
+  {% for product in products %}
+      {% if counter % 1 == 1 %}
+      <tr>
+      {% endif %}
+          {# PRODUCT #}
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" align="center" class="w100p" width="100%">
+        <tr>
+          <td>
+            <img src="{{ product.ex.img }}" width="100%" style="display: block; border: 0;">
+          </td>
+        </tr>
+    <tr>
+      <td>
+        <table border="0" cellpadding="0" cellspacing="0" align="center" class="w100p" width="100%" bgcolor="#0099cc">
+          <tr>
+            <td style="background-color: #0099cc; color: #FFFFFF; font-family: Arial, sans-serif; font-size: 15px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 5px; font-weight: bold; width: 330px;" width="330"><span style="font-size: 13px;">Hotel:</span> <span style="font-size: 15px; font-weight: normal"; >{{ product.n }}</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-family: Arial, sans-serif; font-size: 15px; color: #FFFFFF; font-weight: bold; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 10px;"><span style="font-size: 13px;">From:</span> <span style="font-size: 15px; font-weight: normal"; >{{ product.up|format_currency(cart.curr) }} Per Person</span>
+            </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+      </table>
+    </td>
+    {# END OF PRODUCT #}
+  {% if counter % 1 == 0 or counter == products | length %}
+  </tr>
+  {% endif %}
+  {% set counter = counter + 1 %}
+  {% endfor %}
+  <tr>
+    <td style="padding: 20px;">
+      <table border="0" cellpadding="0" cellspacing="0" align="center" class="w100p" width="100%">
+        <tr>
+          <td><img src="https://www.uploadlibrary.com/BlueBay/cart_images/ATOL.png" style="display: block;" /></td>
+          <td style="color: #333333; font-family: Arial, sans-serif; font-size: 15px;">
+      ATOL Protected
+    </td>
+    <td style="color: #f58d30; font-family: Arial, sans-serif; font-size: 15px; text-align: right;">
+      <a href="#" target="_blank" style="color:#f58d30;">Important travel info</a> - please read
+    </td>
+  </tr>
+</table>
+</td>
+  </tr>
+</table>

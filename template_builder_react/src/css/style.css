@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+body{
+  margin: 0px;
+  font-family: 'Source Sans', sans-serif;
+}
+
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  margin: 0px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*Navigation*/
+
+.leftNav{
+  min-width: 485px;
+  background-color: #212121;
+}
+
+.mainHeader{
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.companyName{
+  font-size: 18px;
+  color: #f6f6f6;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.templateText{
+  font-size: 24px;
+  color: #f6f6f6;
+  text-align: center;
+  text-transform: uppercase;
+  height: 100%;
+}
+
+.leftPane {
+  display: flex;
+  min-height: 100%;
+}
+
+
+.mainNav{
+  min-width: 188px;
+  background-color: #212121;
+  z-index: 9999;
+}
+
+.optionNav{
+  padding: 0;
+  list-style-type: none;
+  color: #FFFFFF;
+  margin: 0px;
+}
+.optionNav li{
+  display: block;
+  font-size: 15px;
+}
+
+.optionNav li a{
+  display: block;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 25px;
+}
+
+.optionNav li:hover {
+  background-color: #2e2e2e;
+}
+
+.blocksNav{
+  background-color: #2e2e2e;
+  width: 100%;
+}
+
+.blocksNav ul {
+  margin: 0px auto;
+  padding: 0px;
+
+}
+
+.blocksNav li {
+  list-style: none;
+}
+
+.blocksNav li:first-child {
+  margin-top: 20px;
+}
+
+.blocksNav li img {
+  display: block;
+  max-width: 220px;
+  margin: 0px auto 20px;
+}
+
+
+.stageArea{
+  width: 100%;
+  background-color: #f6f6f6;
+}
